@@ -62,7 +62,7 @@ export default class News extends Component {
         return (
             <div className="container my-3">
                 <h1 className="text-center">NewsJunkey - Top {this.props.category !== 'general'?this.props.category.toUpperCase():""} Headlines</h1>
-                <InfiniteScroll dataLength={this.state.articles.length}
+                <InfiniteScroll dataLength={this.state.articles && this.state.articles.length}
                                 next={this.fetchMoreData}
                                 hasMore={this.state.articles.length ?this.state.articles.length !== this.state.totalResults:false}
                                 loader={<Spinner/>}>
